@@ -3,7 +3,7 @@ services:
     name: django-db-app
     env: python
     buildCommand: |
-      cd DJANGOPROJ/userdb
+      cd userdb
       pip install -r ../requirements.txt
     startCommand: gunicorn userdb.userdb.wsgi:application
     envVars:
