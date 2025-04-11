@@ -5,7 +5,7 @@ services:
     buildCommand: |
       cd DJANGOPROJ/userdb
       pip install -r ../requirements.txt
-    startCommand: gunicorn userdb.wsgi:application
+    startCommand: gunicorn userdb.userdb.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-        value: userdb.settings
+        value: userdb.userdb.settings
