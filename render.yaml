@@ -1,11 +1,11 @@
 services:
   - type: web
-    name: django-db-app
+    name: django-database
     env: python
-    buildCommand: |
-      cd userdb
-      pip install -r ../requirements.txt
-    startCommand: gunicorn userdb.userdb.wsgi:application
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn userdb.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-        value: userdb.userdb.settings
+        value: userdb.settings
+      - key: PYTHON_VERSION
+        value: 3.10
